@@ -13,6 +13,7 @@ User also may browse event categories to find city events as well
 Event organizers can create their own events for users to see
 
 
+<<<<<<< HEAD
 
 Specs:
 
@@ -23,3 +24,4 @@ MVP:
 Post-MVP:
 
 7 screens total: Home, Search, Favorites, Profile, Sign-in, Sign-up, as well as Event organizer screen, for users to create their own events cards
+
