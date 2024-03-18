@@ -1,21 +1,27 @@
-# git-group-project-
+Event Finder
 
-luis-payan-dev
-hello world
-=======
+BLUF: App helps user find local events and purchase tickets
 
-# joseph coste
+App consists of an events feed, displaying upcoming events in the user's city
 
-Im john making the changes `1012-0-102-01-012--0
+User has ability to 'favorite' events, which automatically adds the event to the user's personal favorites dashboard
 
-Cesar Iparrea
+User also may search for specific events by name
 
-i am making a new change for practice
+User also may browse event categories to find city events as well
 
-im john on line 16 making a new edit
+Event organizers can create their own events for users to see
 
 
-kevin making edit on Kevin-dev
-kevin making more edits on kevin-dev
+<<<<<<< HEAD
 
-this is kevin, line 20 making a new edit to test pull requests
+Specs:
+
+MVP: 
+
+6 screens total: Home, Search, Favorites, and Profile. User will also be presented with Sign-in and Sign-up screens upon their initial visit to the Favorites screen.
+
+Post-MVP:
+
+7 screens total: Home, Search, Favorites, Profile, Sign-in, Sign-up, as well as Event organizer screen, for users to create their own events cards
+
