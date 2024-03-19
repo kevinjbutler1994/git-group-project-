@@ -6,7 +6,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 async function getEvents() {
-  const currentEventUrl = `https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&apikey=${process.env.API_KEY}`;
+  const currentEventUrl = `https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&apikey=${process.env.API_KEY}&size=10`;
 
   try {
     const response = await fetch(currentEventUrl);
