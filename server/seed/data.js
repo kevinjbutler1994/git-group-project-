@@ -1,15 +1,30 @@
+import data from "../data.json" assert { type: "json" };
 import Event from "../models/Event.js";
-import db from "../db/connections.js";
-import data from "./data.json" assert { type: "json" };
+import mongoose from "mongoose";
+import connection from "../db/connection.js";
 
-const insertData = async () => {
-  await db.dropDatabase();
+let eventData = data._embedded.events.map((item) => {
+  const event = {};
+  event.eventName = item.name;
+  event.eventDate = item.dates.start.localDate;
+  event.eventTime = item.dates.start.localTime;
+  event.eventVenue = item._embedded.venues[0].name;
+  event.eventMinPrice = item.priceRanges ? item.priceRanges[0].min : 0;
+  event.eventMaxPrice = item.priceRanges ? item.priceRanges[0].max : 0;
+  event.eventCity = item._embedded.venues[0].city.name;
+  event.eventTickets = item.url;
+  event.eventPicture = item.images[0].url;
+  event.eventCategory = item.classifications[0].segment.name;
 
-  await Event.create(data);
+  return event;
+});
 
-  console.log("Events are created!");
+// console.log(eventData)
 
-  await db.close();
-};
+Event.deleteMany({})
+  .then(() => Event.create(eventData))
+  .then(() => console.log("Done!"))
+  .then(() => mongoose.disconnect())
+  .catch((error) => console.log("Error", error));
 
-insertData();
+export default mongoose.connection;
