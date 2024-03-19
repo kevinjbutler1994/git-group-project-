@@ -1,6 +1,16 @@
 import User from "../models/User.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
+
+/* CONFIGURATIONS */
+dotenv.config();
+
+// for production
+// if (process.env.NODE_ENV === "production") {
+//   SALT_ROUNDS = Number(process.env.SALT_ROUNDS);
+//   TOKEN_KEY = process.env.TOKEN_KEY;
+// }
 
 export const registerUser = async (req, res) => {
   try {

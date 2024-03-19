@@ -4,6 +4,10 @@ import logger from "morgan";
 import chalk from "chalk";
 import express from "express";
 import allRoutes from "./routes/index.js";
+import dotenv from "dotenv";
+
+/* CONFIGURATIONS */
+dotenv.config();
 
 const app = express();
 
@@ -13,7 +17,7 @@ app.use(cors());
 app.use(logger("dev"));
 
 // DEFINE PORT
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 6000;
 
 // ROUTE
 app.use("/", allRoutes);
