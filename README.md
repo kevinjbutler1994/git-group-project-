@@ -13,7 +13,6 @@ User also may browse event categories to find city events as well
 Event organizers can create their own events for users to see
 
 
-<<<<<<< HEAD
 
 Specs:
 
