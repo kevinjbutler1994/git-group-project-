@@ -11,6 +11,7 @@ let eventData = data._embedded.events.map((item) => {
   event.eventVenue = item._embedded.venues[0].name;
   event.eventMinPrice = item.priceRanges ? item.priceRanges[0].min : 0;
   event.eventMaxPrice = item.priceRanges ? item.priceRanges[0].max : 0;
+  // event.eventCountry = item._embedded.venues[2].country.name;
   event.eventCity = item._embedded.venues[0].city.name;
   event.eventTickets = item.url;
   event.eventPicture = item.images[0].url;
