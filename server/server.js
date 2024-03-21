@@ -17,7 +17,7 @@ app.use(cors());
 app.use(logger("dev"));
 
 // DEFINE PORT
-const PORT = process.env.PORT || 6000;
+const PORT = process.env.PORT || 3007;
 console.log(PORT)
 // ROUTE
 app.use("/", allRoutes);
