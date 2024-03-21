@@ -18,7 +18,7 @@ app.use(logger("dev"));
 
 // DEFINE PORT
 const PORT = process.env.PORT || 6000;
-
+console.log(PORT)
 // ROUTE
 app.use("/", allRoutes);
 
