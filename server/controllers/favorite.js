@@ -13,7 +13,10 @@ export const getFavorites = async (req, res) => {
     const decoded = jwt.verify(token, process.env.TOKEN_KEY);
     const userId = decoded.id;
 
-    const favorites = await Favorite.find({ userId });
+    console.log("UserID: ", userId)
+    
+    const favorites = await Favorite.find({ userId }).populate("eventId");
+    console.log("favs: ", favorites)
     res.json(favorites);
   } catch (error) {
     console.error(error);
